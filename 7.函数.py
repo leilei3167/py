@@ -16,6 +16,7 @@ def add(x, y):
 
 print(add(1, 2))
 print(add(101, 200))
+print(add(y=1, x=10))  # 指定参数名,可以不按照顺序传参
 
 
 # 没有指定return的函数,默认返回None(也可以显式的返回None),if判断中None会被当做False
@@ -37,6 +38,9 @@ def add1(x, y):
     return x + y
 
 
+print("\n函数默认值")
+
+
 # 函数默认值
 def greet(name, message="Hello", times=1):
     for _ in range(times):
@@ -48,10 +52,27 @@ greet("John")  # 输出: Hello, John!
 greet("John", "Hi")  # 输出: Hi, John!
 greet("John", "Hi", 3)  # 输出: Hi, John! Hi, John! Hi, John!
 
+print("\n函数可选参数")
+
+
+# 可以通过默认值来实现可选参数
+def get_formatted_name(first_name, last_name, middle_name=''):
+    """返回整洁的姓名"""
+    if middle_name:  # 空字符串为False
+        full_name = f"{first_name} {middle_name} {last_name}"
+    else:
+        full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+
 # 局部变量和全局变量
 # 局部变量:在函数内部定义的变量,只能在函数内部使用
 # 全局变量:在函数外部定义的变量,可以在函数内部使用,但是不能在函数内部修改全局变量的值
 
+print("\n局部变量和全局变量")
 all = 1
 
 

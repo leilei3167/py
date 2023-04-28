@@ -48,3 +48,25 @@ print("3出现的次数: ", mix_arr.count(3))
 mix_arr.clear()
 print("clear清空列表后: ", mix_arr)
 print("列表的长度: ", len(mix_arr))
+
+# 8.最大值最小值,总和
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print("最大值: ", max(digits))
+print("最小值: ", min(digits))
+print("总和: ", sum(digits))
+
+# 9.切片操作,使用[:]来复制列表
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("players: ", players)
+print("[0:3]:", players[0:3])
+print("[-3:]:", players[-3:])  # 最后3个
+
+players1 = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("players1: ", players1)
+p2 = players1[3:]
+print("修改p1之前的p2: ", p2)
+players1[3] = "修改后的元素"
+print("修改p1之后的p2: ", p2)  # p2不会随着p1的修改而修改
+# 复制整个列表
+p3 = players1[:]
+print("复制整个列表p3: ", p3)
