@@ -65,3 +65,6 @@ print()
 new_map = {}
 new_map["name"] = "张三"
 print(new_map)
+
+my_list = list(alien_0)  # 只会保留key
+print(my_list)

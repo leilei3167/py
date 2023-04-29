@@ -2,7 +2,7 @@ from battery import Battery
 
 
 # 父类
-class Car():
+class Car:
     """一次模拟汽车的简单尝试"""
 
     def __init__(self, make, model, year):
@@ -12,7 +12,7 @@ class Car():
         self.odometer_reading = 0
 
     def get_descriptive_name(self):
-        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        long_name = str(self.year) + " " + self.make + " " + self.model
         return long_name.title()
 
     def read_odometer(self):

@@ -1,6 +1,6 @@
 # 创建Dog类,类名应该使用驼峰命名
 # 对于每个类，都应紧跟在类定义后面包含一个文档字符串,文档字符串用三引号括起,描述类的功能
-class Dog():
+class Dog:
     """
     一条狗,具备名字和年龄属性,并且能够执行坐下和打滚的行为
     """
@@ -29,18 +29,18 @@ class Dog():
 
 
 # 根据类创建实例,在出现Dog()时,python会使用实参调用Dog的__init__方法,无需传入self参数,Python会自动传入
-my_dog = Dog('willie', 6)
+my_dog = Dog("willie", 6)
 print("My dog's name is " + my_dog.name.title() + ".")
 print("My dog is " + str(my_dog.age) + " years old.")  # str()函数将非字符串值表示为字符串
 print()
-my_dog1 = Dog('lucy', 3)
+my_dog1 = Dog("lucy", 3)
 print("My dog's name is " + my_dog1.name.title() + ".")
 print("My dog is " + str(my_dog1.age) + " years old.")
 
 print("\nCar类:")
 
 
-class Car():
+class Car:
     def __init__(self, make, model, year):
         self.make = make
         self.model = model
@@ -48,7 +48,7 @@ class Car():
         self.odometer_reading = 0  # 给属性指定默认值
 
     def get_name(self):
-        long_name = str(self.year) + ' ' + self.make + ' ' + self.model
+        long_name = str(self.year) + " " + self.make + " " + self.model
         return long_name.title()
 
     def read_odometer(self):
@@ -65,7 +65,7 @@ class Car():
             print("You can't roll back an odometer!")
 
 
-my_car = Car('audi', 'a4', 2016)
+my_car = Car("audi", "a4", 2016)
 print(my_car.get_name())
 
 print("\n修改属性的值:")
