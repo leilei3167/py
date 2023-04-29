@@ -1,20 +1,20 @@
 print("----------字符串定义的三种方式------------")
 # 三种定义字符串的方式
 # 1.单引号
-s1 = 'hello'
+s1 = "hello"
 print(s1)
 # 2.双引号
 s2 = "hello"
 print(s2)
 # 3.三引号
-s3 = '''hello
+s3 = """hello
 >>> you -----
-are "dsa" \''' 0-0----
+are "dsa" ''' 0-0----
 fuck ---
-'''
+"""
 print(s3)
 
-print("dsaij\"\"\"\"")
+print('dsaij""""')
 
 print("----------字符串拼接------------")
 # 直接用+号

@@ -5,7 +5,7 @@ num = random.randint(1, 100)
 # while循环 while [condition]
 count = 0
 while count < 10:
-    print(f'hello world,count: {count} ')
+    print(f"hello world,count: {count} ")
     count += 1
 
 print("求1-100的和")
@@ -14,7 +14,7 @@ sum = 0
 while count <= 100:
     sum += count
     count += 1
-print(f'1-100的和是{sum}')
+print(f"1-100的和是{sum}")
 
 # print("----------猜数字---------")
 # flag = True
@@ -36,7 +36,7 @@ i = 1
 while i <= 9:
     j = 1
     while j <= i:
-        print(f'{j}*{i}={i * j}', end=" ")  # 使用end=" " 不换行
+        print(f"{j}*{i}={i * j}", end=" ")  # 使用end=" " 不换行
         j += 1
     print()
     i += 1

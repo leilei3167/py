@@ -4,11 +4,11 @@
 from car import ElectricCar, Car
 
 # 创建普通car
-my_car = Car('audi', 'a4', 2016)
+my_car = Car("audi", "a4", 2016)
 print(my_car.get_descriptive_name())
 
 # 创建电动car,可以直接使用父类的方法
-my_tesla = ElectricCar('tesla', 'model s', 2016)
+my_tesla = ElectricCar("tesla", "model s", 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
 my_tesla.fill_gas_tank()

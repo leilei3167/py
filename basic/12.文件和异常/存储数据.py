@@ -7,7 +7,7 @@ numbers = {
     "d": 4,
     2: 1,
     "e": [1, 3, 4, "hello"],
-    "name": "丢雷老牟"
+    "name": "丢雷老牟",
 }
 
 filename = "numbers.json"

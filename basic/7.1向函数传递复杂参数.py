@@ -5,12 +5,12 @@ def greet_users(names):
         print(msg)
 
 
-usernames = ['hannah', 'ty', 'margot']
+usernames = ["hannah", "ty", "margot"]
 greet_users(usernames)
 
 print("\n在函数中修改列表")
 # 函数中修改列表,会影响到原列表
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+unprinted_designs = ["iphone case", "robot pendant", "dodecahedron"]
 completed_models = []
 
 
@@ -42,7 +42,7 @@ print("原列表已经被修改", unprinted_designs)
 # 除非有充分的理由需要传递副本，否则还是应该将原始列表传递给函数，因为让函数使用现成列表可避免花时间和内存创建副本，从
 # 而提高效率，在处理大型列表时尤其如此
 print("\n传递列表的副本")
-unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+unprinted_designs = ["iphone case", "robot pendant", "dodecahedron"]
 completed_models = []
 
 print_models(unprinted_designs[:], completed_models)

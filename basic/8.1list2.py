@@ -56,12 +56,12 @@ print("最小值: ", min(digits))
 print("总和: ", sum(digits))
 
 # 9.切片操作,使用[:]来复制列表
-players = ['charles', 'martina', 'michael', 'florence', 'eli']
+players = ["charles", "martina", "michael", "florence", "eli"]
 print("players: ", players)
 print("[0:3]:", players[0:3])
 print("[-3:]:", players[-3:])  # 最后3个
 
-players1 = ['charles', 'martina', 'michael', 'florence', 'eli']
+players1 = ["charles", "martina", "michael", "florence", "eli"]
 print("players1: ", players1)
 p2 = players1[3:]
 print("修改p1之前的p2: ", p2)

@@ -1,7 +1,7 @@
-alien_0 = {'color': 'green', 'points': 5}
-print(alien_0['color'])
-print(alien_0['points'])
-new_points = alien_0['points']
+alien_0 = {"color": "green", "points": 5}
+print(alien_0["color"])
+print(alien_0["points"])
+new_points = alien_0["points"]
 print("You just earned " + str(new_points) + " points!")
 
 # 注意，键—值对的排列顺序与添加顺序不同。Python不关心键—值对的添加顺序，
@@ -42,10 +42,10 @@ for k in alien_0:
 print("\n只遍历字典的值")
 # 实现有序遍历
 favorite_languages = {
-    'jen': 'python',
-    'sarah': 'c',
-    'edward': 'ruby',
-    'phil': 'python',
+    "jen": "python",
+    "sarah": "c",
+    "edward": "ruby",
+    "phil": "python",
 }
 
 for name in sorted(favorite_languages.keys()):  # sorted()函数可以对列表进行临时排序

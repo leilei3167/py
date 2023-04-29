@@ -6,10 +6,10 @@ from collections import OrderedDict
 favorite_languages = OrderedDict()
 
 # 写入键值对
-favorite_languages['jen'] = 'python'
-favorite_languages['sarah'] = 'c'
-favorite_languages['edward'] = 'ruby'
-favorite_languages['phil'] = 'python'
+favorite_languages["jen"] = "python"
+favorite_languages["sarah"] = "c"
+favorite_languages["edward"] = "ruby"
+favorite_languages["phil"] = "python"
 
 # 遍历字典
 for name, language in favorite_languages.items():

@@ -17,6 +17,7 @@ func1(lambda x, y: x + y)
 
 # 内部函数使用外部函数的变量,就是闭包
 
+
 def counter(count=0):
     # 外部函数的变量以及参数
     def inner():
@@ -40,6 +41,7 @@ print(c2())
 
 
 # 装饰器
+
 
 def wrapper(func):
     def inner():

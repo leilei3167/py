@@ -3,7 +3,7 @@
 # 表和字典结合起来使用，可收集、存储并组织大量输入，供以后查看和显示
 
 print("移动列表元素")
-unconfirmed_users = ['alice', 'brian', 'candace']
+unconfirmed_users = ["alice", "brian", "candace"]
 confirmed_users = []
 
 while unconfirmed_users:
@@ -14,15 +14,15 @@ while unconfirmed_users:
 print("\nThe following users have been confirmed:")
 
 print("\n删除包含特定值的所有列表元素")
-pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+pets = ["dog", "cat", "dog", "goldfish", "cat", "rabbit", "cat"]
 print("before: ", pets)
 
-while 'cat' in pets:  # while循环中使用remove()来删除列表中的所有特定值
-    pets.remove('cat')
+while "cat" in pets:  # while循环中使用remove()来删除列表中的所有特定值
+    pets.remove("cat")
 
 print("after remove cat: ", pets)
 
-print('dog' in pets)  # True
+print("dog" in pets)  # True
 
 print("\n使用用户输入来填充字典")
 responses = {}
@@ -35,7 +35,7 @@ while flag:
     responses[name] = response
 
     repeat = input("Would you like to let another person respond? (y/n) ")
-    if repeat == 'n':
+    if repeat == "n":
         flag = False
 
 print("\n--- Poll Results ---", responses)

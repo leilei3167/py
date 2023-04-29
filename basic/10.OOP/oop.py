@@ -55,6 +55,7 @@ tesla.run()
 
 # 3.多态
 
+
 # 定义抽象类(带有@abstractmethod的类,且继承自ABC就是抽象类),这个抽象类不能实例化,只能被继承(实现),继承他的子类必须实现所有带@abstractmethod的方法
 # 相当于go中的接口
 class Animal(ABC):

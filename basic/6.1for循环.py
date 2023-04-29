@@ -7,7 +7,7 @@ for n in name:
     if n == "a":
         a_count += 1
 
-print(f'\n a的个数是{a_count}')
+print(f"\n a的个数是{a_count}")
 
 # range语法:
 # 1.range(num) 获取0到num-1的整数序列,如输入5,则获取0,1,2,3,4
@@ -27,5 +27,5 @@ print("循环外部访问i,是可以访问i的(最新的值),规范是不建议�
 # for循环嵌套
 for i in range(1, 10):
     for j in range(1, i + 1):
-        print(f'{j}*{i}={j * i}', end=" ")
+        print(f"{j}*{i}={j * i}", end=" ")
     print()

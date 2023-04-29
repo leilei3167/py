@@ -10,6 +10,7 @@ print(my_func(10))
 
 # 2. 函数的参数,可定义任意多个参数,参数可以有默认值
 
+
 def add(x, y):
     return x + y
 
@@ -56,7 +57,7 @@ print("\n函数可选参数")
 
 
 # 可以通过默认值来实现可选参数
-def get_formatted_name(first_name, last_name, middle_name=''):
+def get_formatted_name(first_name, last_name, middle_name=""):
     """返回整洁的姓名"""
     if middle_name:  # 空字符串为False
         full_name = f"{first_name} {middle_name} {last_name}"
@@ -65,7 +66,7 @@ def get_formatted_name(first_name, last_name, middle_name=''):
     return full_name.title()
 
 
-musician = get_formatted_name('jimi', 'hendrix')
+musician = get_formatted_name("jimi", "hendrix")
 print(musician)
 
 # 局部变量和全局变量
