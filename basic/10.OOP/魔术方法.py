@@ -3,24 +3,53 @@
 
 
 class Animal:
+    __myage = 0
+    __myname = ""
+
     # __init__方法:用于构造方法,在创建对象时调用,可以用来对对象进行初始化
-    def __init__(self, name, age):
-        self._myage = age
-        self._myname = name
+    def __init__(self, name: str, age: int):
+        self.__myname = name
+        self.__myage = age
 
     # __str__:类似于go中的实现Stringer接口,用于返回一个对象的描述信息(自定义格式化打印这个类),方便我们查看
+    # 定制print时的打印信息
     def __str__(self):
-        return "name:" + self._myname + " age:" + str(self._myage)
+        return "name:" + self.__myname + " age:" + str(self.__myage)
+
+    # __getattr__:用于获取属性,当访问的属性不存在时,会调用__getattr__方法,返回自定义的信息
+    def __getattr__(self, item):
+        return f"访问的item: {item} 不存在"
+
+    # __setattr__:用于设置属性,当设置属性时,会调用__setattr__方法,可以在这里对属性进行一些检查和限制
+    # key是当前的属性名字,value是要设置的值
+    def __setattr__(self, key, value):
+        if key == "_Animal__myage" and value < 0:
+            raise ValueError("年龄不能为负数")
+        else:
+            super().__setattr__(key, value)  # 验证通过,调用父类的__setattr__方法,设置属性
+
+    def __call__(self, *args, **kwargs):
+        print("__call__方法被调用了!!")
 
     # __lt__:用于比较两个对象的大小,返回bool值
     def __lt__(self, other):
-        return self._myage < other._myage
+        return self.__myage < other.__myage
 
     # 小于大于
     def __le__(self, other):
-        return self._myage <= other._myage
+        return self.__myage <= other.__myage
 
     # 类似的还有__gt__,__ge__,__eq__,__ne__
+
+    # 私有属性通过getter和setter方法来访问
+
+    @property
+    def age(self):
+        return self.__myage
+
+    @age.setter
+    def age(self, value):
+        self.__myage = value
 
 
 d = Animal("dog", 3)
@@ -32,3 +61,12 @@ print(d < d1)  # True
 print(d > d1)
 d2 = Animal("dog2", 4)
 print(d1 <= d2)  # True
+
+
+print()
+print(d.age)
+d.age = 5
+print(d.age)
+print(d.hello)
+d.age = -1
+print(d.age)

@@ -3,12 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+myenv/
 .vscode
 ../.idea
 # C extensions
 *.so
 
-.idea
+.idea/
 
 # Distribution / packaging
 .Python
