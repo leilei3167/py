@@ -1,3 +1,4 @@
+# 线程的创建和使用的过程和创建进程时一样的，只是调用的方法不一样
 # 使用threading模块创建线程
 
 import threading
