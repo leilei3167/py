@@ -71,7 +71,6 @@ class Animal(ABC):
 # a = Animal()  # 报错,不能实例化,因为Animal已经是抽象类了
 
 
-# 具体实现
 class Dog(Animal):
     def __init__(self, name, age):
         self.name = name
@@ -85,17 +84,20 @@ class Dog(Animal):
 
 
 # 一个函数,接收一个Animal类型的参数(即接收一个接口类型的实现作为参数),实现多态
-def animal_sound(animal: Animal):
+# 鸭子类型,不关注对象的类型,只关注对象是否有实现某个方法
+def animal_sound(animal):
     animal.make_sound()
     animal.move()
 
 
 # 实例,实现接口的多个实例,实现多态
 d = Dog("bob", 3)
+print(isinstance(d, Animal))  # True
 animal_sound(d)
 
 d2 = Dog("lucy", 2)
 animal_sound(d2)
+# animal_sound("hjelo") # 提示: 'str' object has no attribute 'make_sound'
 
 
 # 没有实现所有的抽象方法,会提示
