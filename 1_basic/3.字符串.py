@@ -43,6 +43,7 @@ print(s7)
 # 方式二:快速写法,不限类型,不做精度控制,在字符串内容开始前加f,并使用花括号取变量
 print(f"s1:{s1} s2:{s2} n1:{n1} n3:{n3}")
 
+
 # 直接把表达式写入字符串
 print("直接把表达式写入1+1: %d" % (1 + 1))
 
@@ -55,3 +56,9 @@ ti = ti.rstrip()
 print(ti)
 
 # 删除首尾空白使用strip()
+
+b = b"hellp"  # b前缀代表这是字节类的数据,只能接收ascii数据,如果含有中文等,必须要编码
+print(type(b), b)
+
+sb = s5.encode("utf-8")
+print(type(sb), sb)

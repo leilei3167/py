@@ -68,3 +68,7 @@ print(new_map)
 
 my_list = list(alien_0)  # 只会保留key
 print(my_list)
+
+d = {"Michael": 95, "Bob": 75, "Tracy": 85}
+print(d.get("Michael1"))  # 使用get获取不存在的key会返回None
+print(d["Michae1l"])  # 直接获取不存在的key会报错 KeyError: 'Michae1l'

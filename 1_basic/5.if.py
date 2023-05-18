@@ -10,6 +10,20 @@ age = 19
 # else:
 #     print("恭喜你,可以进入游乐场")
 
+weight = float(input("请输入体重(kg):"))
+height = float(input("请输入身高(m):"))
+
+bmi = weight / (height**2)
+if bmi < 18.5:
+    print("过轻")
+elif 18.5 <= bmi < 25:
+    print("正常")
+elif 25 <= bmi < 28:
+    print("过重")
+else:
+    print("严重肥胖")
+
+
 # 嵌套使用
 
 if int(input("输入你的身高: ")) > 120:
