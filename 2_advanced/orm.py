@@ -31,7 +31,7 @@ class StringField(Field):
 
 class IntegerField(Field):
     def __init__(self, name):
-        super(IntegerField, self).__init__(name, "bigint")
+        super().__init__(name, "bigint")
 
 
 # 元类
@@ -56,7 +56,7 @@ class ModelMetaclass(type):
 # 基类model,使用元类创建动态的model类
 class Model(dict, metaclass=ModelMetaclass):
     def __init__(self, **kw):
-        super(Model, self).__init__(**kw)
+        super().__init__(**kw)
 
     def __getattr__(self, key):
         try:
