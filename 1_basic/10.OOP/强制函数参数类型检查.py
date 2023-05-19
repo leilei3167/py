@@ -15,6 +15,7 @@ def validate_input(obj, **kwargs):
 
 
 def type_check(decorator):
+    # 将被装饰函数的参数传递给装饰器函数,避免遗失属性(如函数的名字会成为wrapped_decorator的名字而不是被装饰函数的名字)
     @wraps(decorator)
     def wrapped_decorator(*args, **kwargs):  # 定义一个装饰器函数
         # 类似于反射,获取被装饰函数的所有参数
