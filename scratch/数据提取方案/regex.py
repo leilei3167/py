@@ -14,7 +14,8 @@ for i1 in i:
 
 # search 返回的就是迭代器中的元素即match对象,search只会检索到一个就返回
 s = re.search(r"\d+", "我10086,他1000")
-print(s, s.group())
+if s != None:
+    print(s, s.group())
 
 
 # # match从头开始匹配,用的不多,相当于在正则加了个^
