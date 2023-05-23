@@ -31,7 +31,7 @@ async def b():
 async def main():
     t = time.time()
     result = await asyncio.gather(a(), b())
-    print(result)
+    print(type(result), result)
     print("total: ", time.time() - t)
     print("main pid: ", os.getpid())  # 异步和多进程不同,异步是在一个进程中执行的
 
