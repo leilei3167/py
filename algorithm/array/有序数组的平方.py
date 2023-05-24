@@ -17,3 +17,28 @@ class Solution:
                 r -= 1
             n -= 1  # 新数组指针左移
         return res
+
+
+# 暴力解法,平方后排序
+class Solution1:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted([i**2 for i in nums])
+
+
+# 双指针
+class Solution2:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        l, r, n = 0, len(nums) - 1, len(nums) - 1
+        new_list = [0] * len(nums)  # 新列表容纳结果
+        while l <= r:
+            lm = nums[l] ** 2
+            rm = nums[r] ** 2
+            if lm > rm:
+                new_list[n] = lm
+                l += 1
+            else:
+                new_list[n] = rm
+                r -= 1
+
+            n -= 1
+        return new_list
