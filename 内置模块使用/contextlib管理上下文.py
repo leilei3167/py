@@ -51,7 +51,6 @@ def create_query(name):
 with create_query("bob") as c:
     c.query()
 
-
 # closing可以把任意对象自动关闭,这个对象就是一个上下文管理器，它的__exit__函数仅仅调用传入参数的close函数
 
 from urllib.request import urlopen
