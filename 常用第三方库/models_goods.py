@@ -1,8 +1,8 @@
 # coding: utf-8
 from sqlalchemy import Column, DateTime, Float, ForeignKey, Index, Integer, JSON
 from sqlalchemy.dialects.mysql import DATETIME, TINYINT, VARCHAR
-from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 metadata = Base.metadata
@@ -10,7 +10,6 @@ metadata = Base.metadata
 
 class Banner(Base):
     __tablename__ = 'banner'
-
     id = Column(Integer, primary_key=True)
     add_time = Column(DateTime, nullable=False)
     is_deleted = Column(TINYINT(1), nullable=False)
@@ -98,7 +97,8 @@ class Goodscategorybrand(Base):
     add_time = Column(DateTime, nullable=False)
     is_deleted = Column(TINYINT(1), nullable=False)
     update_time = Column(DateTime, nullable=False)
-    category_id = Column(ForeignKey('category.id', ondelete='RESTRICT', onupdate='RESTRICT'), nullable=False, index=True)
+    category_id = Column(ForeignKey('category.id', ondelete='RESTRICT', onupdate='RESTRICT'), nullable=False,
+                         index=True)
     brand_id = Column(ForeignKey('brands.id', ondelete='RESTRICT', onupdate='RESTRICT'), nullable=False, index=True)
 
     brand = relationship('Brand')

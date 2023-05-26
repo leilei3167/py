@@ -1,9 +1,9 @@
 # pip install sqlalchemy
 # pip install mysql-connector
-from sqlalchemy import Column, String, create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models import Base, User
 
+from models import Base, User
 
 # 快速从表结构创建对象,需要使用sqlacodegen
 # 该工具暂时不支持新版python,在3.9是能运行的
