@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>学员管理系统</title>
+  </head>
+
+  <body>
+    <h3><a href="/admin">Admin</a></h3>
+    <!-- Django的模板语法,两侧有空格,意思是从上下文中获取到words变量,这个变量是调用render时传递的 -->
+    <ul>
+      {% for student in students %}
+      <!-- student.get_status_display是没有这个方法的,对于设置了choices的字段,Django会自动提供一个方法,用来获取其要展示的值
+       注意不要加括号-->
+      <li>{{ student.name }} - {{ student.get_status_display }}</li>
+      {% endfor %}
+    </ul>
+    <hr />
+    <!-- 定义表单提交 -->
+    <form action="/" method="post">
+      <!-- 对提交数据的安全性做校验,如果没有这个token,提交的数据无效 -->
+      {% csrf_token %} {{ form }}
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
