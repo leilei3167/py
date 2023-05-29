@@ -16,6 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from student.views import index
+from student.views import IndexView
 
-urlpatterns = [path("admin/", admin.site.urls), path("", index, name="index")]
+# 最简单的以单函数的方式来做handler
+# urlpatterns = [path("admin/", admin.site.urls),
+#                path("", index, name="index")]
+
+
+# 以类为单位组织处理器,注意要使用类方法as_view()来将类转换为函数
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", IndexView.as_view(), name="index"),
+]

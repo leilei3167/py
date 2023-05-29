@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# 中间件是有执行顺序的,所以要注意顺序
 MIDDLEWARE = [
+    "student.middlewares.TimeItMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -74,10 +76,28 @@ WSGI_APPLICATION = "student_sys.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# 默认用的是sqlite3,这里我们改用MySQL
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
+# }
+
+# 使用mysql必须先安装mysqlclient
+# ubuntu上安装mysql客户端依赖文件: sudo apt-get install libmysqlclient-dev
+# 之后: pip install mysqlclient
+# HOST不能使用localhost,否则会报错
+# TEST是用于测试的数据库,测试完成后会自动删除
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.mysql",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+        "USER": "root",
+        "PASSWORD": "123456",
+        "NAME": "test",
+        "TEST": {"NAME": "tmp_django"},
     }
 }
 

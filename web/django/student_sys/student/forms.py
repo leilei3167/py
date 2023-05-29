@@ -5,7 +5,7 @@ from .models import Student
 
 # 此处定义表单,
 
-
+# 手动定义表单
 # class StudentForm(forms.ModelForm):
 #     name = forms.CharField(label="姓名", max_length=128)
 #     sex = forms.ChoiceField(label="性别", choices=Student.SEX_ITEMS)
@@ -15,7 +15,7 @@ from .models import Student
 #     phone = forms.CharField(label="电话", max_length=128)
 
 
-# 和model的定义很类似,实际上也可以复用model的定义,不需要向上面一样重复定义很多字段
+# 如果form和model的定义很类似,实际上也可以复用model的定义,不需要向上面一样重复定义很多字段
 class StudentForm(forms.ModelForm):
     # 对于某个字段的个性化定制,可以在此处定义,clean_xxx,如clean_phone
     def clean_qq(self):
@@ -30,4 +30,5 @@ class StudentForm(forms.ModelForm):
 
     class Meta:
         model = Student
-        fields = ("name", "sex", "profession", "email", "qq", "phone", "status")
+        # 需要验证的字段
+        fields = ("name", "sex", "profession", "email", "qq", "phone")

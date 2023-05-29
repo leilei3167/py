@@ -15,6 +15,7 @@ class Student(models.Model):
         (1, "通过"),
         (2, "拒绝"),
     ]
+
     # 字段
     name = models.CharField(max_length=128, verbose_name="姓名")
     sex = models.IntegerField(choices=SEX_ITEMS, verbose_name="性别")
@@ -32,6 +33,11 @@ class Student(models.Model):
     @classmethod
     def get_all(cls):
         return cls.objects.all()
+
+    @property
+    def sex_show(self):
+        # 返回性别的中文表示而不是数值
+        return dict(self.SEX_ITEMS)[self.sex]
 
     def __str__(self) -> str:
         return "<Student: {}>".format(self.name)
