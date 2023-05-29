@@ -24,8 +24,14 @@ if __name__ == "__main__":
     s.listen(5)
     print("Waiting for connection...")
 
-    while True:
-        sock, addr = s.accept()
-        # 接收到一个连接就开启一个线程,否则无法同时处理多个连接
-        t = threading.Thread(target=tcplink, args=(sock, addr))
-        t.start()
+    try:
+        i = 0
+        while True:
+            sock, addr = s.accept()
+            # 接收到一个连接就开启一个线程,否则无法同时处理多个连接
+            t = threading.Thread(
+                name='thread-%s' % i, target=tcplink, args=(sock, addr)
+            )
+            t.start()
+    finally:
+        s.close()
