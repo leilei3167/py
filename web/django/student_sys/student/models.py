@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
+    # choices名称大写
     # 定义了choices的字段,在admin页面自动展示(调用get_status_display()方法),而我们自己的模板需要在模板中手动调用此方法
     SEX_ITEMS = [
         (1, "男"),
@@ -16,7 +17,7 @@ class Student(models.Model):
         (2, "拒绝"),
     ]
 
-    # 字段
+    # 字段名称以下划线命名分隔而不是驼峰
     name = models.CharField(max_length=128, verbose_name="姓名")
     sex = models.IntegerField(choices=SEX_ITEMS, verbose_name="性别")
     profession = models.CharField(max_length=128, verbose_name="职业")
@@ -28,6 +29,13 @@ class Student(models.Model):
         auto_now_add=True, editable=False, verbose_name="创建时间"
     )
 
+    # 展示在admin页面的名称
+    class Meta:
+        verbose_name = verbose_name_plural = "学员信息"
+
+    def __str__(self) -> str:
+        return "<Student: {}>".format(self.name)
+
     # 定义了一个类方法,用于获取所有的学生信息,后续可以直接使用Student.get_all()来获取所有学生信息
     # 这里可以自定义逻辑,如默认返回所有已通过审核的学生信息
     @classmethod
@@ -38,10 +46,3 @@ class Student(models.Model):
     def sex_show(self):
         # 返回性别的中文表示而不是数值
         return dict(self.SEX_ITEMS)[self.sex]
-
-    def __str__(self) -> str:
-        return "<Student: {}>".format(self.name)
-
-    # 展示在admin页面的名称
-    class Meta:
-        verbose_name = verbose_name_plural = "学员信息"

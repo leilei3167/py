@@ -19,8 +19,7 @@ class StudentAdmin(admin.ModelAdmin):
     # 定义admin右侧的过滤器,性别,状态,创建时间
     list_filter = ("sex", "status", "created_time")
     search_fields = ("name", "profession")
-    # 这是在?
-    # 1. 用于创建学员信息时, 以表格的形式展示
+    #  调整创建学员信息时, 以特定的形式展示
     fieldsets = (
         (
             None,

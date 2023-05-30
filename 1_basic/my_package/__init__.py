@@ -5,3 +5,6 @@
 
 
 # 在使用时,导入名称就是 包名.模块名
+# init文件在这个包被导入时会执行一次,因此init文件通常用于将当前包的所有模块导入,便于外界使用此包
+from .hellp import *
+from .utils import *

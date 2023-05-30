@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 import os
+import profile
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "student_sys.settings")
+    # 默认开发环境
+    profile = os.environ.get("profile", "develop")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "student_sys.settings.%s" % profile)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
